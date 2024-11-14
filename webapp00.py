@@ -8,13 +8,13 @@ from ACTlib01 import *
 #Escrever(db)
 
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
-st.title("MEU 2º WEB APP STREAMLIT")
+st.title("Ordem de serviço")
 
 # Use st.header("") para adicionar um CABEÇALHO ao seu Web app
-st.header("Hejheheheh! Prof. Massaki")
+st.header("Sua ordem de serviço feita de forma mais prática!")
 
 # Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
-st.subheader("Sub Cabeçalho")
+st.subheader("Personalize sua bike")
 
 # Use st.write("") para adicionar um texto ao seu Web app
 st.write("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
