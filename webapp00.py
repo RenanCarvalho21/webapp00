@@ -7,19 +7,66 @@ from ACTlib01 import *
 #db.fillna('', inplace=True)
 #Escrever(db)
 
-# Use st.title("") para adicionar um TÍTULO ao seu Web app
-st.title("Ordem de serviço")
+import streamlit as st
+from fpdf import FPDF
+import datetime
 
-# Use st.header("") para adicionar um CABEÇALHO ao seu Web app
-st.header("Sua ordem de serviço feita de forma mais prática!")
+# Função para gerar PDF
+def gerar_pdf(nome_cliente, descricao_servico, data_inicio, data_fim, valor, numero_os):
+    # Criação do objeto PDF
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    
+    # Definindo título e fonte
+    pdf.set_font("Arial", size=12)
+    
+    # Cabeçalho
+    pdf.cell(200, 10, txt=f'Ordem de Serviço - {numero_os}', ln=True, align="C")
+    pdf.ln(10)  # Linha em branco
+    
+    # Detalhes da OS
+    pdf.cell(200, 10, txt=f'Número da OS: {numero_os}', ln=True)
+    pdf.cell(200, 10, txt=f'Cliente: {nome_cliente}', ln=True)
+    pdf.cell(200, 10, txt=f'Descrição do Serviço: {descricao_servico}', ln=True)
+    pdf.cell(200, 10, txt=f'Data de Início: {data_inicio}', ln=True)
+    pdf.cell(200, 10, txt=f'Data de Término: {data_fim}', ln=True)
+    pdf.cell(200, 10, txt=f'Valor: R${valor}', ln=True)
+    
+    # Salvar PDF
+    pdf_output_path = f"OS_{numero_os}.pdf"
+    pdf.output(pdf_output_path)
+    
+    return pdf_output_path
 
-# Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
-st.subheader("Personalize sua bike")
+# Função principal da interface Streamlit
+def main():
+    # Título da aplicação
+    st.title("Sistema de Ordem de Serviço")
+    
+    # Formulário para preencher os dados da OS
+    st.header("Preencha os dados da Ordem de Serviço")
+    
+    # Campos do formulário
+    nome_cliente = st.text_input("Nome do Cliente")
+    descricao_servico = st.text_area("Descrição do Serviço")
+    data_inicio = st.date_input("Data de Início")
+    data_fim = st.date_input("Data de Término")
+    valor = st.number_input("Valor do Serviço (R$)", min_value=0.0, format="%.2f")
+    
+    # Gerar número da OS (simulação simples de geração automática)
+    numero_os = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    
+    if st.button("Gerar Ordem de Serviço"):
+        if nome_cliente and descricao_servico and valor > 0.0:
+            # Gerar PDF da OS
+            pdf_path = gerar_pdf(nome_cliente, descricao_servico, data_inicio, data_fim, valor, numero_os)
+            
+            # Exibir link para download do PDF
+            st.success(f"Ordem de Serviço gerada com sucesso! Você pode fazer o download abaixo.")
+            st.download_button(label="Baixar PDF da Ordem de Serviço", data=open(pdf_path, "rb").read(), file_name=pdf_path)
+        else:
+            st.error("Por favor, preencha todos os campos obrigatórios.")
 
-# Use st.write("") para adicionar um texto ao seu Web app
-st.write("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
-
-values = st.slider("Select a range of values", 0.0, 100.0, (5.0, 15.0))
-st.write("Values:", values)
-
-st.image("desenvolvimento.jpg", caption="TESTE_Inserir_IMAGEM")
+if __name__ == "__main__":
+    main()
