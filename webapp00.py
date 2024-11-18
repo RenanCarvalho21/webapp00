@@ -7,7 +7,7 @@ def calcular_valor_servico(tipo_servico):
     servicos = {
         0: 500 + 250,  # Fusível Para Transformadores + Base
         1: 1000,       # Fusível Ação Lenta
-        2: 2000,       # Fusível ação rápida
+        2: 2000,       # Fusível ação Rápida
         3: 500 + 1000, # Fusível Ação Ultra-rápida
         4: 500 + 2000  # Fusível Média Tensão + Chave Seccionadora
     }
@@ -16,8 +16,8 @@ def calcular_valor_servico(tipo_servico):
 # Função para gerar o PDF da Ordem de Serviço
 def gerar_pdf(nome_cliente, numero_cliente, marca_fusível, amperagem_fusível, tipo_servico, como_era, como_ficara, valor_total):
     tipo_servico_str = ["Fusível para Transformadores + Base", 
-                        "Fusível Ação lenta", 
-                        "Fusível Ação rápida", 
+                        "Fusível Ação Lenta", 
+                        "Fusível Ação Rápida", 
                         "Fusível Ação Ultra-rápida + Base", 
                         "Fusível Média Tensão + Chave Seccionadora"][tipo_servico]
     
