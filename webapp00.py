@@ -4,12 +4,12 @@ import datetime
 
 # Função para calcular o valor do serviço
 def calcular_valor_servico(tipo_servico):
-    servicos = 
-    {(0: 500 + 250,  # Reparo de Carburetor + Retoque
+    servico = 
+    {0: 500 + 250,  # Reparo de Carburetor + Retoque
     1: 1000,       # Pintura Simples
     2: 2000,       # Pintura Complexa
     3: 500 + 1000, # Reparo de Carburetor + Pintura Simples
-    4: 500 + 2000  # Reparo de Carburetor + Pintura Complexa)}
+    4: 500 + 2000  # Reparo de Carburetor + Pintura Complexa}
 
     return servicos.get(tipo_servico, 0)  # Caso o tipo não esteja no dicionário, retorna 0
 
