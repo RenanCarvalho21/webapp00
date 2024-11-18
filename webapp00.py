@@ -11,9 +11,6 @@ import streamlit as st
 from fpdf import FPDF
 import datetime
 
-import streamlit as st
-from fpdf import FPDF
-
 # Função para calcular o valor do serviço
 def calcular_valor_servico(tipo_servico):
     # Valores dos serviços
