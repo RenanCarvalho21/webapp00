@@ -14,7 +14,7 @@ def calcular_valor_servico(tipo_servico):
     return servicos.get(tipo_servico, 0)  # Caso o tipo não esteja no dicionário, retorna 0
 
 # Função para gerar o PDF da Ordem de Serviço
-def gerar_pdf(nome_cliente, numero_cliente, marca_fusível, descricao_fusível, tipo_servico, como_era, como_ficara, valor_total):
+def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, descricao_fusivel, tipo_servico, como_era, como_ficara, valor_total):
     tipo_servico_str = ["Fusível para Transformadores + Base", 
                         "Fusível Ação Lenta", 
                         "Fusível Ação Rápida", 
@@ -36,8 +36,8 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusível, descricao_fusível, 
     # Informações do cliente e serviço
     pdf.cell(200, 10, txt=f"Cliente: {nome_cliente}", ln=True)
     pdf.cell(200, 10, txt=f"Número do Cliente: {numero_cliente}", ln=True)
-    pdf.cell(200, 10, txt=f"Marca do Fusível: {marca_fusível}", ln=True)
-    pdf.cell(200, 10, txt=f"Corrente e Tensão Descrita pelo fabricante: {descricao_fusível}", ln=True)
+    pdf.cell(200, 10, txt=f"Marca do Fusível: {marca_fusivel}", ln=True)
+    pdf.cell(200, 10, txt=f"Corrente e Tensão Descrita pelo fabricante: {descricao_fusivel}", ln=True)
     pdf.cell(200, 10, txt=f"Serviço Selecionado: {tipo_servico_str}", ln=True)
     pdf.cell(200, 10, txt=f"Qual fusível está instalado?: {como_era}", ln=True)
     pdf.cell(200, 10, txt=f"Qual será a nova instalação?: {como_ficara}", ln=True)
@@ -45,7 +45,7 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusível, descricao_fusível, 
     
     # Salvar o PDF em um arquivo
     data_atual = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    pdf_output_path = f"OS_{numero_cliente}_{descricao_fusível}_{data_atual}.pdf"
+    pdf_output_path = f"OS_{numero_cliente}_{descricao_fusivel}_{data_atual}.pdf"
     pdf.output(pdf_output_path)
     
     return pdf_output_path
@@ -61,8 +61,8 @@ def main():
     # Campos de entrada para os dados do cliente e do fusível
     nome_cliente = st.text_input("Nome do Cliente")
     numero_cliente = st.number_input("Número do Cliente", min_value=1)
-    marca_fusível = st.text_input("Marca do fusível")
-    descricao_fusível = st.number_input("Corrente e Tensão Descrita pelo fabricante", min_value=1)
+    marca_fusivel = st.text_input("Marca do fusível")
+    descricao_fusivel = st.number_input("Corrente e Tensão Descrita pelo fabricante", min_value=1)
     
     # Seleção do serviço
     tipo_servico = st.radio("Escolha o Serviço", 
@@ -91,15 +91,15 @@ def main():
             st.subheader("Resumo da Ordem de Serviço")
             st.write(f"Cliente: {nome_cliente}")
             st.write(f"Número do Cliente: {numero_cliente}")
-            st.write(f"Marca do Fusível: {marca_fusível}")
-            st.write(f"Corrente e Tensão Descrita pelo fabricante: {descricao_fusível}")
+            st.write(f"Marca do Fusível: {marca_fusivel}")
+            st.write(f"Corrente e Tensão Descrita pelo fabricante: {descricao_fusivel}")
             st.write(f"Serviço Selecionado: {tipo_servico}")
             st.write(f"Qual fusível está instalado?: {como_era}")
             st.write(f"Qual será a nova instalação?: {como_ficara}")
             st.write(f"Total do Serviço: R${valor_total}")
             
             # Gerar o PDF da Ordem de Serviço
-            pdf_path = gerar_pdf(nome_cliente, numero_cliente, marca_fusível, descricao_fusível, tipo_servico_num, como_era, como_ficara, valor_total)
+            pdf_path = gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, descricao_fusivel, tipo_servico_num, como_era, como_ficara, valor_total)
             
             # Adicionar botão para download do PDF
             with open(pdf_path, "rb") as file:
