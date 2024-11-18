@@ -39,8 +39,8 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusível, amperagem_fusível, 
     pdf.cell(200, 10, txt=f"Marca do Fusível: {marca_fusível}", ln=True)
     pdf.cell(200, 10, txt=f"Amperagem: {amperagem_fusível}", ln=True)
     pdf.cell(200, 10, txt=f"Serviço Selecionado: {tipo_servico_str}", ln=True)
-    pdf.cell(200, 10, txt=f"Descrição Original: {como_era}", ln=True)
-    pdf.cell(200, 10, txt=f"Personalização: {como_ficara}", ln=True)
+    pdf.cell(200, 10, txt=f"Qual fusível está instalado?: {como_era}", ln=True)
+    pdf.cell(200, 10, txt=f"Qual será a nova instalação?: {como_ficara}", ln=True)
     pdf.cell(200, 10, txt=f"Total do Serviço: R${valor_total}", ln=True)
     
     # Salvar o PDF em um arquivo
