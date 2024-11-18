@@ -3,7 +3,7 @@ import streamlit as st
 from ACTlib01 import *
 
 #url da imagem no GitHub 
-img_url = https://raw.githubusercontent.com/RenanCarvalho21/webapp00/refs/heads/main/Materiais%20Eletricos%20Foto.jpg
+img_url = https://github.com/RenanCarvalho21/webapp00/blob/main/Materiais%20Eletricos%20Foto.jpg?raw=true
 
 #Exibe a imagem 
 st.image(img_url, caption="Minha Imagem", use_column_width=True)
