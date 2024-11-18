@@ -2,12 +2,6 @@
 import streamlit as st
 from ACTlib01 import *
 
-#url da imagem no GitHub 
-img_url=https://raw.githubusercontent.com/RenanCarvalho21/webapp00/6f7858ee2637f5b21618e082eb72f31a03f3e529/Materiais%20Eletricos%20Foto.jpg
-
-#Exibe a imagem 
-st.image(img_url, caption="Minha Imagem", use_column_width=True)
-
 from fpdf import FPDF
 import datetime
 
