@@ -15,13 +15,11 @@ def calcular_valor_servico(tipo_servico):
 
 # Função para gerar o PDF da Ordem de Serviço
 def gerar_pdf(nome_cliente, numero_cliente, marca_bike, numero_bike, tipo_servico, como_era, como_ficara, valor_total):
-    tipo_servico_str = [
-        "Reparo de Carburetor + Retoque",
+    tipo_servico_str = ["Reparo de Carburetor + Retoque",
         "Pintura Simples",
         "Pintura Complexa",
         "Reparo de Carburetor + Pintura Simples",
-        "Reparo de Carburetor + Pintura Complexa"
-    ][tipo_servico]
+        "Reparo de Carburetor + Pintura Complexa" ][tipo_servico]
     
     # Criar o objeto PDF
     pdf = FPDF()
