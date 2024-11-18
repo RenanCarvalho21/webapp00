@@ -5,7 +5,7 @@ import datetime
 # Função para calcular o valor do serviço
 def calcular_valor_servico(tipo_servico):
     servicos = {
-        0: 500 + 250,  # Fusível Para Transformadores + Base
+        0: 500 + 250,  # Fusível para Transformadores + Base
         1: 1000,       # Fusível Ação Lenta
         2: 2000,       # Fusível ação Rápida
         3: 500 + 1000, # Fusível Ação Ultra-rápida
@@ -73,7 +73,7 @@ def main():
                                      "Fusível Média Tensão + Chave Seccionadora"])
     
     # Definindo qual fusível o cliente tem e qual ele precisa trocar
-    como_era = st.text_area("Qual Fusível está instalado?")
+    como_era = st.text_area("Qual fusível está instalado?")
     como_ficara = st.text_area("Qual será a nova instalação?")
     
     # Calcular o valor do serviço
@@ -94,7 +94,7 @@ def main():
             st.write(f"Marca do Fusível: {marca_fusível}")
             st.write(f"Amperagem do Fusível: {amperagem_fusível}")
             st.write(f"Serviço Selecionado: {tipo_servico}")
-            st.write(f"Qual Fusível está instalado?: {como_era}")
+            st.write(f"Qual fusível está instalado?: {como_era}")
             st.write(f"Qual será a nova instalação?: {como_ficara}")
             st.write(f"Total do Serviço: R${valor_total}")
             
