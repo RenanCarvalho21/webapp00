@@ -94,7 +94,7 @@ def main():
     valor_total = calcular_valor_servico(tipo_servico_num)
     
     if st.button("Gerar Ordem de Serviço"):
-        if nome_cliente and numero_cliente and marca_fusível and descricao_fusível:
+        if nome_cliente and numero_cliente and marca_fusivel and descricao_fusivel:
             # Exibir o resumo da ordem de serviço
             st.subheader("Resumo da Ordem de Serviço")
             st.write(f"Cliente: {nome_cliente}")
