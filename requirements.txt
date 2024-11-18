@@ -11,3 +11,4 @@ wordcloud
 fpdf
 datetime
 st.radio
+set_fonte
