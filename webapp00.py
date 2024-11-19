@@ -57,7 +57,10 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, descricao_fusivel, ti
 def main():
     # Título da aplicação
     st.title("Ordem de Serviço - Materiais Elétricos")
-    
+    # URL da imagem hospedada no GitHub
+    image_url = "https://raw.githubusercontent.com/RenanCarvalho21/webapp00/refs/heads/main/Materiais%20Eletricos%20Foto.jpg"
+    # Exibir a imagem no Streamlit
+    st.image(image_url, caption="Materiais Eletricos Foto", use_column_width=True)
     # Formulário para preencher os dados da OS
     st.header("Preencha os dados da Ordem de Serviço")
     
