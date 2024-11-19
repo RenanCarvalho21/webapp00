@@ -111,7 +111,7 @@ def main():
             st.write(f"Total do Serviço: R${valor_total}")
             
             # Gerar o PDF da Ordem de Serviço
-            pdf_path = gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, tensao_fusível, tipo_servico_num, como_era, como_ficara, valor_total)
+            pdf_path = gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, tensao_fusivel, tipo_servico_num, como_era, como_ficara, valor_total)
             
             # Adicionar botão para download do PDF
             with open(pdf_path, "rb") as file:
