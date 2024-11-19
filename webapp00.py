@@ -49,7 +49,7 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, ten
     
     # Salvar o PDF em um arquivo
     data_atual = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    pdf_output_path = f"OS_{numero_cliente}_{corrente_fusivel}_{tensao_fusivel}_{data_atual}.pdf"
+    pdf_output_path = f"OS_{numero_cliente}_{corrente_fusivel}_{data_atual}.pdf"
     pdf.output(pdf_output_path)
     
     return pdf_output_path
