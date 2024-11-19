@@ -60,7 +60,11 @@ def main():
     # URL da imagem hospedada no GitHub
     image_url = "https://raw.githubusercontent.com/RenanCarvalho21/webapp00/refs/heads/main/Materiais%20Eletricos%20Foto.jpg"
     # Exibir a imagem no Streamlit
-    st.image(image_url, caption="Materiais Eletricos Foto", use_column_width=True)
+    st.image(image_url, caption="Linha de disjuntores", use_column_width=True)
+     # URL da imagem hospedada no GitHub
+    image_url = "https://raw.githubusercontent.com/RenanCarvalho21/webapp00/refs/heads/main/Linha%20diversas%20de%20materiais.jpg"
+     # Exibir a imagem no Streamlit
+    st.image(image_url, caption="Linha completa de Materiais Eletricos", use_column_width=True)
     # Formulário para preencher os dados da OS
     st.header("Preencha os dados da Ordem de Serviço")
     
