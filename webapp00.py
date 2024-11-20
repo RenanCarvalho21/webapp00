@@ -18,11 +18,11 @@ def calcular_valor_servico(tipo_servico):
 
 # Função para gerar o PDF da Ordem de Serviço
 def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, tensao_fusivel, tipo_servico, como_era, como_ficara, valor_total):
-    tipo_servico_str = ["\t \t \t \t \t \t \t \t \t \t \t Fusível para Transformadores + Base", 
-                        "\t \t Fusível Ação Lenta", 
-                        "\t \t \t \t \t \t \t \t \t Fusível Ação Rápida", 
-                        "Fusível Ação Ultra-rápida + Base", 
-                        "Fusível Média Tensão + Chave Seccionadora"][tipo_servico]
+    tipo_servico_str = ["\t \t \t \t \t \t \t \t \t \t Fusível para Transformadores + Base", 
+                        "\t \t \t \t \t \t \t \t \t \t Fusível Ação Lenta", 
+                        "\t \t \t \t \t \t \t \t \t \t Fusível Ação Rápida", 
+                        "\t \t \t \t \t \t \t \t \t \t Fusível Ação Ultra-rápida + Base", 
+                        "\t \t \t \t \t \t \t \t \t \t Fusível Média Tensão + Chave Seccionadora"][tipo_servico]
     
     # Criar o objeto PDF
     pdf = FPDF()
@@ -37,7 +37,7 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, ten
     pdf.ln(10)
     
     # Informações do cliente e serviço
-    pdf.cell(200, 10, txt=f"Cliente: {nome_cliente}", ln=True)
+    pdf.cell(200, 10, txt=f"Cliente: \t \t \t {nome_cliente}", ln=True)
     pdf.cell(200, 10, txt=f"Número do Cliente: {numero_cliente}", ln=True)
     pdf.cell(200, 10, txt=f"Marca do Fusível: {marca_fusivel}", ln=True)
     pdf.cell(200, 10, txt=f"Corrente Descrita pelo fabricante: {corrente_fusivel}", ln=True)
