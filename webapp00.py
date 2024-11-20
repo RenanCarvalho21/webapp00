@@ -20,7 +20,7 @@ def calcular_valor_servico(tipo_servico):
 def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, tensao_fusivel, tipo_servico, como_era, como_ficara, valor_total):
     tipo_servico_str = ["\t \t \t \t \t \t \t \t \t \t \t Fusível para Transformadores + Base", 
                         "\t \t Fusível Ação Lenta", 
-                        "\t Fusível Ação Rápida", 
+                        "\t \t \t \t \t \t \t \t \t Fusível Ação Rápida", 
                         "Fusível Ação Ultra-rápida + Base", 
                         "Fusível Média Tensão + Chave Seccionadora"][tipo_servico]
     
