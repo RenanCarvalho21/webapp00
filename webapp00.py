@@ -40,7 +40,7 @@ def gerar_pdf(nome_cliente, numero_cliente, marca_fusivel, corrente_fusivel, ten
     pdf.cell(200, 10, txt=f"Cliente: \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t {nome_cliente}", ln=True)
     pdf.cell(200, 10, txt=f"Número do Cliente:\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t {numero_cliente}", ln=True)
     pdf.cell(200, 10, txt=f"Marca do Fusível: \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t {marca_fusivel}", ln=True)
-    pdf.cell(200, 10, txt=f"Corrente Descrita pelo fabricante:\t \t \t \t \t \t \t {corrente_fusivel}", ln=True)
+    pdf.cell(200, 10, txt=f"Corrente Descrita pelo fabricante:\t \t \t \t \t \t {corrente_fusivel}", ln=True)
     pdf.cell(200, 10, txt=f"Tensão Descrita pelo fabricante: \t \t \t \t \t \t \t {tensao_fusivel}", ln=True)
     pdf.cell(200, 10, txt=f"Serviço Selecionado: \t \t \t \t \t \t \t {tipo_servico_str}", ln=True)
     pdf.cell(200, 10, txt=f"Qual fusível está instalado?: \t \t \t \t \t \t \t \t \t \t \t \t {como_era}", ln=True)
